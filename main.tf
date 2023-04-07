@@ -9,7 +9,7 @@ resource "aws_instance" "one" {
   ami             = "ami-0fa1de1d60de6a97e"
   instance_type   = "t2.micro"
   key_name        = "keypairfordemo"
-  vpc_security_group_ids = [aws_security_group.three.id]
+  vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "ap-south-1a"
   user_data       = <<EOF
 #!/bin/bash
