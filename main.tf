@@ -6,10 +6,10 @@ secret_key = "69qo0Pv2GM0vQ+fiMhbxe6Z70iRTFoVQKSBVZqRS"
 }
 
 resource "aws_instance" "one" {
-  ami             = "ami-0d81306eddc614a45"
+  ami             = "ami-0fa1de1d60de6a97e"
   instance_type   = "t2.micro"
-  key_name        = "rrraham"
-  vpc_security_group_ids = [aws_security_group.five.id]
+  key_name        = "keypairfordemo"
+  vpc_security_group_ids = [aws_security_group.three.id]
   availability_zone = "ap-south-1a"
   user_data       = <<EOF
 #!/bin/bash
@@ -17,7 +17,7 @@ sudo -i
 yum install httpd -y
 systemctl start httpd
 chkconfig httpd on
-echo "hai all this is my app created by terraform infrastructurte by raham sir server-1" > /var/www/html/index.html
+echo "hai all this is my app created by terraform infrastructurte by vijay server-1" > /var/www/html/index.html
 EOF
   tags = {
     Name = "web-server-1"
@@ -25,9 +25,9 @@ EOF
 }
 
 resource "aws_instance" "two" {
-  ami             = "ami-0d81306eddc614a45"
+  ami             = "ami-0fa1de1d60de6a97e"
   instance_type   = "t2.micro"
-  key_name        = "rrraham"
+  key_name        = "keypairfordemo"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "ap-south-1b"
   user_data       = <<EOF
@@ -36,7 +36,7 @@ sudo -i
 yum install httpd -y
 systemctl start httpd
 chkconfig httpd on
-echo "hai all this is my website created by terraform infrastructurte by raham sir server-2" > /var/www/html/index.html
+echo "hai all this is my website created by terraform infrastructurte by vijay server-2" > /var/www/html/index.html
 EOF
   tags = {
     Name = "web-server-2"
@@ -44,9 +44,9 @@ EOF
 }
 
 resource "aws_instance" "three" {
-  ami             = "ami-0d81306eddc614a45"
+  ami             = "ami-0fa1de1d60de6a97e"
   instance_type   = "t2.micro"
-  key_name        = "rrraham"
+  key_name        = "keypairfordemo"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "ap-south-1b"
   tags = {
@@ -55,9 +55,9 @@ resource "aws_instance" "three" {
 }
 
 resource "aws_instance" "four" {
-  ami             = "ami-0d81306eddc614a45"
+  ami             = "ami-0fa1de1d60de6a97e"
   instance_type   = "t2.micro"
-  key_name        = "rrraham"
+  key_name        = "keypairfordemo"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "ap-south-1b"
   tags = {
